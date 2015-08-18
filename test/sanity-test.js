@@ -25,7 +25,7 @@ test('Run TestRTC', function(t) {
   })
   .then(function() {
     return driver.wait(webdriver.until.elementLocated(
-        webdriver.By.css('#startButton')), 15000,
+        webdriver.By.css('#startButton')), 20000,
         'Failed to locate startButton');
   })
   .then(function(element) {
