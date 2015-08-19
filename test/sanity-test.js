@@ -30,7 +30,8 @@ test('Run TestRTC', function(t) {
       })
       // Checking if the button is there on travis.
       .then(function(elementValue) {
-        t.pass('Start button value: ' + elementValue);
+        t.fail('Start button value: ' + elementValue);
+        driver.saveScreenshot('error1231231.png');
       });
     return driver.wait(webdriver.until.elementLocated(
         webdriver.By.css('#startButton')));
