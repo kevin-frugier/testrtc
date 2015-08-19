@@ -24,6 +24,14 @@ test('Run TestRTC', function(t) {
     t.pass('Page loaded');
   })
   .then(function() {
+    driver.findElement(
+      webdriver.By.css('#startButton')).then(function(element) {
+        return element.getText();
+      })
+      // Checking if the button is there on travis.
+      .then(function(elementValue) {
+          t.pass('Start button value: ' + elementValue);
+      });
     return driver.wait(webdriver.until.elementLocated(
         webdriver.By.css('#startButton')));
   })
